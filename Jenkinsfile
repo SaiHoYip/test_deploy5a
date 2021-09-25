@@ -1,21 +1,22 @@
 pipeline {
   agent {
-	label 'agent-linux1'
-	}
+      label 'agent-linux-1'
+  }
   stages {
     stage ('Build') {
       steps {
-      sh 'rm -rf ./cypress2'
+      sh 'rm -rf ./kura_test_repo/cypress2'
       sh '''
         npm install
-	npm install serve
-	serve -s build 
-	'''
+        npm run build
+        sudo npm install -g serve
+        serve -s build&
+        '''
       }
     }
-    stage ('test') {
+    stage ('Second') {
       agent {
-        label 'agent-linux2'
+        label 'agent-linux-2'
       }
       steps {
       sh ''' 
