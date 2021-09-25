@@ -1,5 +1,7 @@
 pipeline{
-agent any
+  agent {
+    label 'agent-linux1'
+  }
 stages {
 stage ('Build') {
 steps {
