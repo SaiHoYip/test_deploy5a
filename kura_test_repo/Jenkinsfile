@@ -1,5 +1,7 @@
 pipeline{
-agent any
+  agent {
+    label 'agent-linux2'
+  }
 stages {
 stage ('Build') {
 steps {
@@ -14,7 +16,7 @@ serve -s build
 }
 stage ('test') {
 agent {
-label 'agent-linux2'
+label 'agent-linux1'
 }
 steps {
 sh '''
