@@ -1,6 +1,6 @@
 pipeline {
   agent {
-      label 'linux-agent1'
+      label 'agent-linux1'
   }
   stages {
     stage ('Build') {
@@ -13,7 +13,7 @@ pipeline {
     }
     stage ('Second') {
       agent {
-        label 'linux-agent2'
+        label 'agent-linux2'
       }
       steps {
       sh ''' 
