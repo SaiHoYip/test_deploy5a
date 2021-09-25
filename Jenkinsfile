@@ -10,11 +10,11 @@ npm run build
 sudo npm install -g serve
 serve -s build
 '''
-}
+  }
 }
 stage ('test') {
 agent {
-label 'linux-agent2'
+label 'Your agent label'
 }
 steps {
 sh '''
